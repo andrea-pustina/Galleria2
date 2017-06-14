@@ -16,11 +16,11 @@ public class Opera {
 
 	@NotNull
 	@Size(min=1)
-	private String titolo;
+	private String title;
 	
 	@NotNull
 	@Size(min=1)
-	private int anno;
+	private int year;
 	
 	@NotNull
 	@Size(min=1)
@@ -28,26 +28,26 @@ public class Opera {
 	
 	@NotNull
 	@ManyToOne
-	private Autore autore;
+	private Author author;
 	
 	@NotNull
 	@ManyToOne
-	private Tecnica tecnica;	
+	private Technique tecnique;	
 
 	protected Opera() {}
 
-	public Opera(String titolo, int anno, String dimensioni, Autore autore, Tecnica tecnica) {
-		this.titolo = titolo;
-		this.anno = anno;
+	public Opera(String title, int year, String dimensioni, Author author, Technique technique) {
+		this.title = title;
+		this.year = year;
 		this.dimensioni = dimensioni;
-		this.autore = autore;
-		this.tecnica = tecnica;
+		this.author = author;
+		this.tecnique = technique;
 	}
 
 	@Override
 	public String toString() {
 		return String.format(
-				"Opera[id=%d, titolo='%s']",id, titolo);
+				"Opera[id=%d, titolo='%s']",id, title);
 	}
 
 

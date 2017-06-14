@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>New Technique</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+	<body>
+		<form action="newTechnique" th:action="@{/technique/add}" th:object="${technique}" method="post">
+			<div>
+					<span>Name: </span>
+					<span><input type="text" th:field="*{name}"/></span>
+					<span th:if="${#fields.hasErrors('name')}">Error</span>
+			</div>
+			<div>
+				<span><button type="submit">Submit</button></span>
+			</div>
+		</form>
+	</body>
+</html>

@@ -16,42 +16,42 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
-public class Autore {
+public class Author {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
 	@NotNull
 	@Size(min=1)
-	private String nome;
+	private String firstname;
 	
 	@NotNull
 	@Size(min=1)
-	private String cognome;
+	private String lastname;
 	
 	@NotNull
 	@Temporal(TemporalType.DATE)
-	private Date dataNascita;
+	private Date birthDate;
 	
 	@Temporal(TemporalType.DATE)
-	private Date dataMorte;
+	private Date deathDate;
 	
 	@ManyToOne
-	private Nazione nazione;
+	private Nation nation;
 	
-	@OneToMany(mappedBy="autore")
-	private List<Opera> opere;
+	@OneToMany(mappedBy="author")
+	private List<Opera> operas;
 	
 
-	protected Autore() {
-		this.opere = new LinkedList<>();
+	protected Author() {
+		this.operas = new LinkedList<>();
 	}
 
-	public Autore(String nome, String cognome, Date dataNascita, Date dataMorte) {
+	public Author(String firstname, String lastname, Date birthDate, Date deathDate) {
 		this();
-		this.nome = nome;
-		this.cognome = cognome;
-		this.dataNascita= dataNascita;
-		this.dataMorte = dataMorte;
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.birthDate= birthDate;
+		this.deathDate = deathDate;
 	}
 }

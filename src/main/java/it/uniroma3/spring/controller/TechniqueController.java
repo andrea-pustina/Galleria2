@@ -10,32 +10,32 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import it.uniroma3.spring.model.Customer;
-import it.uniroma3.spring.service.CustomerService;
+import it.uniroma3.spring.model.Technique;
+import it.uniroma3.spring.service.TechniqueService;
 
 
 @Controller
-public class CustomerController  {
+public class TechniqueController  {
 	
     @Autowired
-    private CustomerService customerservice; 
+    private TechniqueService techniqueservice; 
 
-    @GetMapping("/customer/add")
-    public String showForm(Customer customer) {
-        return "form";
+    @GetMapping("/technique/add")
+    public String showForm(Technique technique) {
+        return "formtechnique";
     }
 
-    @PostMapping("/customer/add")
-    public String checkCustomerInfo(@Valid @ModelAttribute Customer customer, 
+    @PostMapping("/technique/add")
+    public String checkTechniqueInfo(@Valid @ModelAttribute Technique technique, 
     									BindingResult bindingResult, Model model) {
     	
         if (bindingResult.hasErrors()) {
-            return "form";
+            return "formtechnique";
         }
         else {
-        	model.addAttribute(customer);
-            customerservice.add(customer); 
+        	model.addAttribute(technique);
+            techniqueservice.add(technique); 
         }
-        return "results";
+        return "formtechnique";
     }
 }

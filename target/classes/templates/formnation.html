@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>New Nation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+    <body>
+        <form action="#" th:action="@{/nation/add}" th:object="${nation}" method="post">
+            <div>
+                <div>
+                    <span>Name: </span>
+                    <span><input type="text" th:field="*{name}" /></span>
+                    <span th:if="${#fields.hasErrors('name')}">Error</span>
+                </div>
+                <div>
+                    <span><button type="submit">Submit</button></span>
+                </div>
+            </div>
+        </form>
+    </body>
+</html>
