@@ -20,12 +20,12 @@ public class CustomerController  {
     @Autowired
     private CustomerService customerservice; 
 
-    @GetMapping("/customer")
+    @GetMapping("/customer/add")
     public String showForm(Customer customer) {
         return "form";
     }
 
-    @PostMapping("/customer")
+    @PostMapping("/customer/add")
     public String checkCustomerInfo(@Valid @ModelAttribute Customer customer, 
     									BindingResult bindingResult, Model model) {
     	
