@@ -19,12 +19,12 @@ public class NationController {
     private NationService nationService; 
 
     @GetMapping("/nation/add")
-    public String showForm(Nation nation) {
+    public String showFormNation(Nation nation) {
         return "formnation";
     }
 
     @PostMapping("/nation/add")
-    public String checkCustomerInfo(@Valid @ModelAttribute Nation nation, BindingResult bindingResult, Model model) {
+    public String checkNationInfo(@Valid @ModelAttribute Nation nation, BindingResult bindingResult, Model model) {
     	
         if (bindingResult.hasErrors()) {
             return "formnation";

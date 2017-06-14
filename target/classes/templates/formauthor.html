@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>New Author</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+    <body>
+        <form action="#" th:action="@{/author/add}" th:object="${author}" method="post">
+            <div>
+                <div>
+                    <span>FirstName: </span>
+                    <span><input type="text" th:field="*{firstName}" /></span>
+                    <span th:if="${#fields.hasErrors('firstName')}">Error</span>
+                </div>
+                <div>
+                    <span>LastName: </span>
+                    <span><input type="text" th:field="*{lastName}" /></span>
+                    <span th:if="${#fields.hasErrors('lastName')}">Error</span>
+                </div>
+                <div>
+                    <span>BirthDate: </span>
+                    <span><input type="date" th:field="*{birthDate}" /></span>
+                    <span th:if="${#fields.hasErrors('birthDate')}">Error</span>
+                </div>
+                <div>
+                    <span>DeathDate: </span>
+                    <span><input type="date" th:field="*{deathDate}" /></span>
+                    <span th:if="${#fields.hasErrors('deathDate')}">Error</span>
+                </div>
+                <div class="form-group">
+                    <label>Nation:</label>
+                    <select id="nation" th:field="*{nation}">
+                		<option value="" >select a nation</option>
+                		<option th:each="n : ${nations}" th:value="${n.id}"  th:text="${n.name}"></option>
+            		</select>
+                </div>
+                <div>
+                    <span><button type="submit">Submit</button></span>
+                </div>
+            </div>
+        </form>
+    </body>
+</html>

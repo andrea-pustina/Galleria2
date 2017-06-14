@@ -24,7 +24,7 @@ public class Nation {
 	@OneToMany(mappedBy="nation")
 	private List<Author> author;
 
-	public Nation() {
+	protected Nation() {
 		this.author = new LinkedList<>();
 	}
 

@@ -15,6 +15,8 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 public class Author {
 	@Id
@@ -23,17 +25,19 @@ public class Author {
 
 	@NotNull
 	@Size(min=1)
-	private String firstname;
+	private String firstName;
 	
 	@NotNull
 	@Size(min=1)
-	private String lastname;
+	private String lastName;
 	
 	@NotNull
 	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date birthDate;
 	
 	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date deathDate;
 	
 	@ManyToOne
@@ -47,10 +51,10 @@ public class Author {
 		this.operas = new LinkedList<>();
 	}
 
-	public Author(String firstname, String lastname, Date birthDate, Date deathDate) {
+	public Author(String firstName, String lastName, Date birthDate, Date deathDate) {
 		this();
-		this.firstname = firstname;
-		this.lastname = lastname;
+		this.firstName = firstName;
+		this.lastName = lastName;
 		this.birthDate= birthDate;
 		this.deathDate = deathDate;
 	}
@@ -63,20 +67,20 @@ public class Author {
 		this.id = id;
 	}
 
-	public String getFirstname() {
-		return firstname;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
-	public String getLastname() {
-		return lastname;
+	public String getLastName() {
+		return lastName;
 	}
 
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 	public Date getBirthDate() {
@@ -110,6 +114,7 @@ public class Author {
 	public void setOperas(List<Opera> operas) {
 		this.operas = operas;
 	}
+
 	
 	
 }

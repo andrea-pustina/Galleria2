@@ -33,9 +33,9 @@ public class TechniqueController  {
             return "formtechnique";
         }
         else {
-        	model.addAttribute(technique);
+        	//model.addAttribute(technique);
             techniqueservice.add(technique); 
         }
-        return "formtechnique";
+        return "summarytechnique";
     }
 }
