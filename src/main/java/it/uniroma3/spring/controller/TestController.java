@@ -1,17 +1,10 @@
 package it.uniroma3.spring.controller;
 
 import java.util.Date;
-import java.util.List;
-
-import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
 
 import it.uniroma3.spring.model.Author;
 import it.uniroma3.spring.model.Dimension;
@@ -37,7 +30,7 @@ public class TestController {
 	@Autowired
     private OperaService operaService; 
 
-    @GetMapping("/test")
+    @GetMapping("/test/inizializzadatabase")
     public String initializeDatabase() {
     	
     	Technique t1 = new Technique("acquarelli");
@@ -62,7 +55,7 @@ public class TestController {
 		operaService.add(o1);
 		operaService.add(o2);
     	
-    	return"nation/add/";
+    	return"redirect:/";
     }
 }
 
