@@ -41,14 +41,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .and()
         .formLogin()
             .loginPage("/login")
-            .defaultSuccessUrl("/index")
+            .defaultSuccessUrl("/management")
             .permitAll()
             .and()
         .logout()
 	        .invalidateHttpSession(true)
 	        .logoutUrl("/logout")
 	        .deleteCookies("JSESSIONID,SPRING_SECURITY_REMEMBER_ME_COOKIE")
-	        .logoutSuccessUrl("/index")
+	        .logoutSuccessUrl("/")
            .permitAll();
         
     }
