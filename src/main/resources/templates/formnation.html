@@ -1,21 +1,31 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>New Nation</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-</head>
-    <body>
-        <form action="#" th:action="@{/nation/add}" th:object="${nation}" method="post">
-            <div>
-                <div>
-                    <span>Name: </span>
-                    <span><input type="text" th:field="*{name}" /></span>
-                    <span th:if="${#fields.hasErrors('name')}">Error</span>
-                </div>
-                <div>
-                    <span><button type="submit">Submit</button></span>
-                </div>
-            </div>
-        </form>
-    </body>
+	<head>
+		<title>New Nation</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link rel='stylesheet' href='/webjars/bootstrap/3.2.0/css/bootstrap.min.css' />
+	</head>
+<body>
+	<form action="#" th:action="@{/nation/add}" th:object="${nation}"
+		method="post">
+		<div>
+			<div>
+				<span>Name: </span> <span><input type="text"
+					th:field="*{name}" /></span> <span th:if="${#fields.hasErrors('name')}">Error</span>
+			</div>
+			<div>
+				<span><button type="submit">Submit</button></span>
+			</div>
+		</div>
+	</form>
+	
+	<div class="btn-group">
+	    <button type="button" class="btn btn-success">This is a success button</button>
+	    <button type="button" class="btn btn-warning">This is a warning button</button>
+	    <button type="button" class="btn btn-danger">This is a danger button</button>
+	</div>
+	
+	<script type="text/javascript" src="webjars/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="webjars/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</body>
 </html>
