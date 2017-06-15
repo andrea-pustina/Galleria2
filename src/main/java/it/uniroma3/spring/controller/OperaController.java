@@ -16,7 +16,6 @@ import it.uniroma3.spring.model.Author;
 import it.uniroma3.spring.model.Opera;
 import it.uniroma3.spring.model.Technique;
 import it.uniroma3.spring.service.AuthorService;
-import it.uniroma3.spring.service.DimensionService;
 import it.uniroma3.spring.service.OperaService;
 import it.uniroma3.spring.service.TechniqueService;
 
@@ -30,9 +29,6 @@ public class OperaController {
 	
 	@Autowired
     private AuthorService authorService;
-	
-	@Autowired
-    private DimensionService dimensionService;
 
     @GetMapping("/opera/add")
     public String showFormOpera(Opera opera, Model model) {

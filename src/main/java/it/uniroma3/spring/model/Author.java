@@ -51,12 +51,13 @@ public class Author {
 		this.operas = new LinkedList<>();
 	}
 
-	public Author(String firstName, String lastName, Date birthDate, Date deathDate) {
+	public Author(String firstName, String lastName, Date birthDate, Date deathDate, Nation nation) {
 		this();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.birthDate= birthDate;
 		this.deathDate = deathDate;
+		this.nation = nation;
 	}
 
 	public Long getId() {
