@@ -20,7 +20,7 @@ public class Technique {
 	@Size(min=1)
 	private String name;
 	
-	@OneToMany(mappedBy="tecnique")
+	@OneToMany(mappedBy="technique")
 	private List<Opera> operas;
 
 	protected Technique() {}

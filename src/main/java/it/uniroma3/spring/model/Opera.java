@@ -1,12 +1,16 @@
 package it.uniroma3.spring.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
+
 
 @Entity
 public class Opera {
@@ -17,31 +21,32 @@ public class Opera {
 	@NotNull
 	@Size(min=1)
 	private String title;
-	
+
 	@NotNull
-	@Size(min=1)
 	private int year;
-	
+
 	@NotNull
-	@Size(min=1)
-	private String dimensioni;
-	
+	@OneToOne(cascade={CascadeType.PERSIST, CascadeType.REMOVE})
+	private Dimension dimension;
+
 	@NotNull
 	@ManyToOne
 	private Author author;
-	
+
 	@NotNull
 	@ManyToOne
-	private Technique tecnique;	
+	private Technique technique;	
 
-	protected Opera() {}
+	protected Opera() {
+		this.dimension = new Dimension();
+	}
 
-	public Opera(String title, int year, String dimensioni, Author author, Technique technique) {
+	public Opera(String title, int year, Dimension dimension, Author author, Technique technique) {
 		this.title = title;
 		this.year = year;
-		this.dimensioni = dimensioni;
 		this.author = author;
-		this.tecnique = technique;
+		this.technique = technique;
+		this.dimension = dimension;
 	}
 
 	public Long getId() {
@@ -68,14 +73,14 @@ public class Opera {
 		this.year = year;
 	}
 
-	public String getDimensioni() {
-		return dimensioni;
+	public Dimension getDimension() {
+		return dimension;
 	}
 
-	public void setDimensioni(String dimensioni) {
-		this.dimensioni = dimensioni;
+	public void setDimension(Dimension dimension) {
+		this.dimension = dimension;
 	}
-
+	
 	public Author getAuthor() {
 		return author;
 	}
@@ -84,12 +89,12 @@ public class Opera {
 		this.author = author;
 	}
 
-	public Technique getTecnique() {
-		return tecnique;
+	public Technique getTechnique() {
+		return technique;
 	}
 
-	public void setTecnique(Technique tecnique) {
-		this.tecnique = tecnique;
+	public void setTechnique(Technique technique) {
+		this.technique = technique;
 	}
 
 }

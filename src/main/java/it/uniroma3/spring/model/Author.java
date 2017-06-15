@@ -115,6 +115,7 @@ public class Author {
 		this.operas = operas;
 	}
 
-	
-	
+	public String GetCompleteName() {
+		return this.firstName + " " + this.lastName;
+	}
 }
