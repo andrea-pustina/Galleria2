@@ -6,6 +6,7 @@
 		<link rel='stylesheet' href='/webjars/bootstrap/3.2.0/css/bootstrap.min.css' />
 	</head>
 <body>
+	<div th:include="navbar :: navbar"></div>
 	<form action="#" th:action="@{/nation/add}" th:object="${nation}"
 		method="post">
 		<div>
@@ -18,13 +19,6 @@
 			</div>
 		</div>
 	</form>
-	
-	<div class="btn-group">
-	    <button type="button" class="btn btn-success">This is a success button</button>
-	    <button type="button" class="btn btn-warning">This is a warning button</button>
-	    <button type="button" class="btn btn-danger">This is a danger button</button>
-	</div>
-	
 	<script type="text/javascript" src="webjars/jquery/2.1.1/jquery.min.js"></script>
 	<script type="text/javascript" src="webjars/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </body>
