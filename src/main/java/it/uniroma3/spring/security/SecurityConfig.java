@@ -22,11 +22,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         	.antMatchers("/",
    				 		 "/home",
    				 		 "/opera",
+   				 		 "/opera/*",
    				 		 "/author",
+   				 		 "/author/*",
         				 "/css/**",
-        				 "/images/**",
-        				 "/js/**",
-	                     "/**/favicon.ico",
+        				 "/img/**",
+        				 //"/js/**",
+	                     //"/**/favicon.ico",
 	                     "/webjars/**").permitAll()
             .anyRequest().authenticated()
             .and()
@@ -39,7 +41,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	        .invalidateHttpSession(true)
 	        .logoutUrl("/logout")
 	        .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-	        //.deleteCookies("JSESSIONID,SPRING_SECURITY_REMEMBER_ME_COOKIE")
 	        .logoutSuccessUrl("/")
            .permitAll();
     }

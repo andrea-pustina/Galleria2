@@ -55,7 +55,7 @@ public class TestController {
 		operaService.add(o1);
 		operaService.add(o2);
     	
-    	return"redirect:/";
+    	return"redirect:/admin/management";
     }
 }
 
