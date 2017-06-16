@@ -6,16 +6,14 @@
     <link rel='stylesheet' href='/webjars/bootstrap/3.2.0/css/bootstrap.min.css' />
 </head>
 <body>
+	<div th:include="navbar :: navbar"></div>
 	<h1>Summary Author</h1>
-	<div class="panel panel-primary">
-      <div class="panel-heading" th:text="${author.firstName} + ' ' + ${author.lastName}"></div>
-      <div class="panel-body" th:text="'birthDate: ' + ${author.birthDate}"></div>
+	
+	<!-- <div>
+    	<p th:text="'firstname: ' + ${author.firstName}" />
     </div>
-	 <div>
-    	<p th:text="'firstName: ' + ${author.firstName}" />
-    </div>
-     <div>
-    	<p th:text="'lastName: ' + ${author.lastName}" />
+    <div>
+    	<p th:text="'lastname: ' + ${author.lastName}" />
     </div>
     <div>
     	<p th:text="'birthDate: ' + ${author.birthDate}" />
@@ -26,5 +24,15 @@
     <div>
     	<p th:text="'nation: ' + ${author.nation.name}" />
     </div>
+     -->
+     
+	<table class="table table-hover">
+      <tr>
+        <th>Operas</th>
+      </tr>
+      <tr th:each="opera : ${operas}">
+        <td><a th:href="@{'/opera/detail'}" th:text="${opera.title}"></a></td>
+      </tr>
+    </table>
 </body>
 </html>

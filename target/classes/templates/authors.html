@@ -3,18 +3,22 @@
 <head>
     <title>Summary Author</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel='stylesheet' href='/webjars/bootstrap/3.2.0/css/bootstrap.min.css' />
 </head>
 <body>
-	<table>
+	<div th:include="navbar :: navbar"></div>
+	<table class="table table-hover">
       <tr>
         <th>Firstname</th>
         <th>Lastname</th>
         <th>Nation</th>
+        <th></th>
       </tr>
       <tr th:each="author : ${authors}">
-        <td th:text="${author.firstname}"></td>
-        <td th:text="${author.lastname}"></td>
+        <td th:text="${author.firstName}"></td>
+        <td th:text="${author.lastName}"></td>
         <td th:text="${author.nation.name}"></td>
+        <td><a th:href="@{'/author/detail'}">operas</a></td>
       </tr>
     </table>
 </body>

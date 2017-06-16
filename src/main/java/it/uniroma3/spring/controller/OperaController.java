@@ -53,4 +53,11 @@ public class OperaController {
         }
         return "summaryopera";
     }
+    
+    @GetMapping("/opera")
+    public String showAllOpera(Model model) {
+    	List<Opera> operas = (List<Opera>) operaService.findAll();
+    	model.addAttribute("operas", operas);
+        return "operas";
+    }
 }

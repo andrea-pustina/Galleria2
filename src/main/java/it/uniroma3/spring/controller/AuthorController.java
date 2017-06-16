@@ -14,8 +14,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import it.uniroma3.spring.model.Author;
 import it.uniroma3.spring.model.Nation;
+import it.uniroma3.spring.model.Opera;
 import it.uniroma3.spring.service.AuthorService;
 import it.uniroma3.spring.service.NationService;
+import it.uniroma3.spring.service.OperaService;
 
 @Controller
 public class AuthorController {
@@ -24,6 +26,9 @@ public class AuthorController {
 	
 	@Autowired
     private NationService nationService; 
+	
+	@Autowired
+	private OperaService operaService;
 
     @GetMapping("/author/add")
     public String showFormAuthor(Author author, Model model) {
@@ -43,5 +48,19 @@ public class AuthorController {
             authorService.add(author); 
         }
         return "summaryauthor";
+    }
+    
+    @GetMapping("/author")
+    public String showAllAuthors( Model model) {
+    	List<Author> authors = (List<Author>) authorService.findAll();
+    	model.addAttribute("authors", authors);
+        return "authors";
+    }
+    
+    @GetMapping("/author/detail")
+    public String showAuthorDetail( Model model) {
+    	List<Opera> operas = (List<Opera>) operaService.findAll();
+    	model.addAttribute("operas", operas);
+        return "authordetail";
     }
 }
