@@ -3,14 +3,19 @@
 <head>
     <title>Summary Author</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel='stylesheet' href='/webjars/bootstrap/3.2.0/css/bootstrap.min.css' />
 </head>
 <body>
 	<h1>Summary Author</h1>
-	<div>
-    	<p th:text="'firstname: ' + ${author.firstName}" />
+	<div class="panel panel-primary">
+      <div class="panel-heading" th:text="${author.firstName} + ' ' + ${author.lastName}"></div>
+      <div class="panel-body" th:text="'birthDate: ' + ${author.birthDate}"></div>
     </div>
-    <div>
-    	<p th:text="'lastname: ' + ${author.lastName}" />
+	 <div>
+    	<p th:text="'firstName: ' + ${author.firstName}" />
+    </div>
+     <div>
+    	<p th:text="'lastName: ' + ${author.lastName}" />
     </div>
     <div>
     	<p th:text="'birthDate: ' + ${author.birthDate}" />
