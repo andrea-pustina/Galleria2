@@ -32,8 +32,12 @@ public class OperaService {
 		return this.operaRepository.findOne(id);
 	}
 	
-	public List<Opera> findbyAuthorId(Long authorId) {
-		Author author = this.authorRepository.findOne(authorId);
+//	public List<Opera> findbyAuthorId(Long authorId) {
+//		Author author = this.authorRepository.findOne(authorId);
+//		return this.operaRepository.findByAuthor(author);
+//	}
+	
+	public List<Opera> findbyAuthor(Author author) {
 		return this.operaRepository.findByAuthor(author);
 	}
 	

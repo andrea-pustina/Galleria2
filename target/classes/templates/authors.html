@@ -18,7 +18,7 @@
         <td th:text="${author.firstName}"></td>
         <td th:text="${author.lastName}"></td>
         <td th:text="${author.nation.name}"></td>
-        <td><a th:href="@{'/author/detail'}">operas</a></td>
+        <td><a th:href="@{'/author/' + ${author.id}}">details</a></td>
       </tr>
     </table>
 </body>
