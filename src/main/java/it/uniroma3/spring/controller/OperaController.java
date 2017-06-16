@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import it.uniroma3.spring.model.Author;
@@ -57,6 +58,13 @@ public class OperaController {
     @GetMapping("/opera")
     public String showAllOpera(Model model) {
     	List<Opera> operas = (List<Opera>) operaService.findAll();
+    	model.addAttribute("operas", operas);
+        return "operas";
+    }
+    
+    @GetMapping("/opera/{authorId}")
+    public String showAllAuthorsOperas(Model model, @PathVariable("authorId") Long authorId ) {
+    	List<Opera> operas = operaService.findbyAuthorId(authorId);
     	model.addAttribute("operas", operas);
         return "operas";
     }
