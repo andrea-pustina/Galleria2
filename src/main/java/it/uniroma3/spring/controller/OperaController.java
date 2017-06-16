@@ -30,7 +30,7 @@ public class OperaController {
 	@Autowired
     private AuthorService authorService;
 
-    @GetMapping("/opera/add")
+    @GetMapping("/admin/opera/add")
     public String showFormOpera(Opera opera, Model model) {
     	List<Author> authors = (List<Author>) authorService.findAll();
     	List<Technique> techniques = (List<Technique>) techniqueService.findAll();
@@ -39,7 +39,7 @@ public class OperaController {
         return "formopera";
     }
 
-    @PostMapping("/opera/add")
+    @PostMapping("/admin/opera/add")
     public String checkCustomerInfo(@Valid @ModelAttribute Opera opera, BindingResult bindingResult, Model model) {
     	
         if (bindingResult.hasErrors()) {

@@ -20,12 +20,12 @@ public class TechniqueController  {
     @Autowired
     private TechniqueService techniqueservice; 
 
-    @GetMapping("/technique/add")
+    @GetMapping("/admin/technique/add")
     public String showForm(Technique technique) {
         return "formtechnique";
     }
 
-    @PostMapping("/technique/add")
+    @PostMapping("/admin/technique/add")
     public String checkTechniqueInfo(@Valid @ModelAttribute Technique technique, 
     									BindingResult bindingResult, Model model) {
     	

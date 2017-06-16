@@ -6,6 +6,7 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 //import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 //
 //import javax.sql.DataSource;
@@ -14,27 +15,17 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
  
-//    @Autowired
-//    private DataSource dataSource;
-// 
-//	@Override
-//	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//
-//		auth.jdbcAuthentication().dataSource(dataSource)
-//		
-//		.passwordEncoder(new BCryptPasswordEncoder())
-//		.usersByUsernameQuery("SELECT username,password,1 FROM users where username=?")
-//		.authoritiesByUsernameQuery("SELECT username,authority FROM authorities where username=?");
-//	}
- 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
     	http
         .authorizeRequests()
-        	.antMatchers("/", "/index").permitAll()
-        	.antMatchers("/css/**",
-	                     "/js/**",
-	                     "/img/**",
+        	.antMatchers("/",
+   				 		 "/home",
+   				 		 "/opera",
+   				 		 "/author",
+        				 "/css/**",
+        				 "/images/**",
+        				 "/js/**",
 	                     "/**/favicon.ico",
 	                     "/webjars/**").permitAll()
             .anyRequest().authenticated()
@@ -47,10 +38,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         .logout()
 	        .invalidateHttpSession(true)
 	        .logoutUrl("/logout")
-	        .deleteCookies("JSESSIONID,SPRING_SECURITY_REMEMBER_ME_COOKIE")
+	        .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+	        //.deleteCookies("JSESSIONID,SPRING_SECURITY_REMEMBER_ME_COOKIE")
 	        .logoutSuccessUrl("/")
            .permitAll();
-        
     }
     
     @Autowired

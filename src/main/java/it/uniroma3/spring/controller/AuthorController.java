@@ -31,14 +31,14 @@ public class AuthorController {
 	@Autowired
 	private OperaService operaService;
 
-    @GetMapping("/author/add")
+    @GetMapping("/admin/author/add")
     public String showFormAuthor(Author author, Model model) {
     	List<Nation> nations = (List<Nation>) nationService.findAll();
     	model.addAttribute("nations", nations);
         return "formauthor";
     }
 
-    @PostMapping("/author/add")
+    @PostMapping("/admin/author/add")
     public String checkCustomerInfo(@Valid @ModelAttribute Author author, BindingResult bindingResult, Model model) {
     	
         if (bindingResult.hasErrors()) {

@@ -18,12 +18,12 @@ public class NationController {
 	@Autowired
     private NationService nationService; 
 
-    @GetMapping("/nation/add")
+    @GetMapping("/admin/nation/add")
     public String showFormNation(Nation nation) {
         return "formnation";
     }
 
-    @PostMapping("/nation/add")
+    @PostMapping("/admin/nation/add")
     public String checkNationInfo(@Valid @ModelAttribute Nation nation, BindingResult bindingResult, Model model) {
     	
         if (bindingResult.hasErrors()) {
