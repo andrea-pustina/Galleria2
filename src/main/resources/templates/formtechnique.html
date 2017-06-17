@@ -1,19 +1,26 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-	<title>New Technique</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-</head>
+	<head>
+		<title>New Technique</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link rel='stylesheet' href='/webjars/bootstrap/3.2.0/css/bootstrap.min.css' />
+		<link rel='stylesheet' href='/css/management.css' />
+	</head>
 	<body>
-		<form action="newTechnique" th:action="@{/technique/add}" th:object="${technique}" method="post">
-			<div>
-					<span>Name: </span>
-					<span><input type="text" th:field="*{name}"/></span>
-					<span th:if="${#fields.hasErrors('name')}">Error</span>
-			</div>
-			<div>
-				<span><button type="submit">Submit</button></span>
-			</div>
-		</form>
+	
+		<div th:include="navbar :: navbar"></div>
+		<div class="centered">
+				<form action="#" th:action="@{/admin/technique/add}" th:object="${technique}" method="post">
+					<fieldset>
+						<legend>Add Technique</legend>
+							<div class="form-group">
+								<label>Name:</label> 
+								<input type="text" th:field="*{name}" />
+					    		<span th:if="${#fields.hasErrors('name')}">Error</span>
+				    		</div>
+				    		<div class="form-group"><button type="submit" class="btn btn-success">Add</button></div>
+					</fieldset>
+				</form>
+		</div>	
 	</body>
 </html>

@@ -1,9 +1,73 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-<title>New Opera</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-</head>
+	<head>
+		<title>New Opera</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link rel='stylesheet' href='/webjars/bootstrap/3.2.0/css/bootstrap.min.css' />
+		<link rel='stylesheet' href='/css/management.css' />
+	</head>
+	<body>
+		<div th:include="navbar :: navbar"></div>
+		<div class="centered">
+				<form action="#" th:action="@{/admin/opera/add}" th:object="${opera}" method="post">
+					<fieldset>
+						<legend>Add Opera</legend>
+							<div class="form-group">
+								<label>Title:</label> 
+								<input type="text" th:field="*{title}" />
+					    		<span th:if="${#fields.hasErrors('title')}">Error</span>
+				    		</div>
+				    		<div class="form-group">
+								<label>Year:</label> 
+								<input type="text" th:field="*{year}" />
+					    		<span th:if="${#fields.hasErrors('year')}">Error</span>
+				    		</div>
+				    		<div class="form-group">
+								<label>Dimension x:</label> 
+								<input type="text" th:field="*{dimension.x}" placeholder="X(cm)" />
+								<span th:if="${#fields.hasErrors('dimension.x')}">Error</span>
+				    		</div>		
+				    		<div class="form-group">
+								<label>Dimension y:</label> 
+								<input type="text" th:field="*{dimension.y}" placeholder="Y(cm)" />
+								<span th:if="${#fields.hasErrors('dimension.y')}">Error</span>
+				    		</div>		    		
+				    		<div class="form-group">
+								<label>Author:</label> 
+								<select id="author" class="form-control" >
+			                		<option value="" >select a author</option>
+			                		<option th:each="a : ${authors}" th:value="${a.id}"  th:text="${a.firstName + ' ' + a.lastName}"></option>
+			            		</select>
+					    		<span th:if="${#fields.hasErrors('author')}">Error</span>
+				    		</div>
+				    		<div class="form-group">
+								<label>Technique:</label> 
+								<select id="technique"
+									th:field="*{technique}" class="form-control">
+									<option value="">select a technique</option>
+									<option th:each="t : ${techniques}" th:value="${t.id}" th:text="${t.name}"></option>
+								</select>
+					    		<span th:if="${#fields.hasErrors('technique')}">Error</span>
+				    		</div>
+							<div class="form-group"><button type="submit" class="btn btn-success">Add</button></div>
+					</fieldset>
+				</form>
+		</div>	
+	</body>
+</html>
+
+
+
+
+<!-- 
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>New Nation</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link rel='stylesheet' href='/webjars/bootstrap/3.2.0/css/bootstrap.min.css' />
+		<link rel='stylesheet' href='/css/managementforms.css' />
+	</head>
 <body>
 	<form action="#" th:action="@{/opera/add}" th:object="${opera}"
 		method="post">
@@ -45,4 +109,4 @@
 		</div>
 	</form>
 </body>
-</html>
+</html> -->

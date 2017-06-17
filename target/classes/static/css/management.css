@@ -11,6 +11,19 @@
     transform: translate(-50%, -50%) }
 }
 
+label {
+  float:left;
+  margin-right:0.5em;
+  padding-top:0.2em;
+  text-align:right;
+  font-weight:bold;
+  }
+  
+fieldset{
+	min-width: 300px;
+	min-height: 150px;
+}
+
 fieldset.scheduler-border {
     border: 1px groove #ddd;
     padding: 0 1.4em 1.4em 1.4em;
