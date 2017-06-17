@@ -4,10 +4,15 @@
     <title>Summary Author</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel='stylesheet' href='/webjars/bootstrap/3.2.0/css/bootstrap.min.css' />
+    <link rel='stylesheet' href='/css/customtable.css' />
 </head>
 <body>
 	<div th:include="navbar :: navbar"></div>
-	<table class="table table-hover">
+	<div class="item active">
+		<img src="/img/gallery1.jpg" alt="gallery1" style="width:30%; height:30%; margin-left:5%;" />
+		<h4 style="width:50%; margin-left:5%; top:25%; left:35%; position: absolute;">Lorem ipsum dolor sit amet, ubique eruditi mea id. Et ferri tation efficiantur mei, ei torquatos efficiendi consectetuer eum, doctus cetero ne vix. Discere repudiandae in est, accusam nominati consulatu eam cu. Nibh ludus singulis pro cu, ea mel detraxit sadipscing signiferumque. Amet sapientem rationibus at duo, appareat repudiandae eam ex, no vis dicat cotidieque.</h4>
+	</div>
+	<table class="table table-hover customlisttable">
       <tr>
         <th>Firstname</th>
         <th>Lastname</th>

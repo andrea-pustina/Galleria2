@@ -4,18 +4,21 @@
     <title>Summary Author</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel='stylesheet' href='/webjars/bootstrap/3.2.0/css/bootstrap.min.css' />
+    <link rel='stylesheet' href='/css/customtable.css' />
 </head>
 <body>
 	<div th:include="navbar :: navbar"></div>
+
 	<H2>Summary Author</H2> 
-	<div class="panel panel-primary">
+	
+	<div class="panel panel-primary custom">
       <div class="panel-heading" th:text="${author.firstName} + ' ' + ${author.lastName}"></div>
       <div class="panel-body" th:text="'birthDate: ' + ${author.birthDate}"></div>
       <div class="panel-body" th:text="'deathDate: ' + ${author.deathDate}"></div>
       <div class="panel-body" th:text="'nation: ' + ${author.nation.name}"></div>
     </div>
 	     
-	<table class="table table-hover">
+	<table class="table table-hover custommargins">
       <tr>
         <th>Title</th>
         <th>Author</th>
