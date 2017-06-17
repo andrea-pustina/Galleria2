@@ -3,23 +3,18 @@
 <head>
     <title>Summary Opera</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel='stylesheet' href='/webjars/bootstrap/3.2.0/css/bootstrap.min.css' />
+    <link rel='stylesheet' href='/css/customtable.css' />
 </head>
 <body>
+	<div th:include="navbar :: navbar"></div>
 	<h1>Summary Opera</h1>
-	<div>
-    	<p th:text="'title: ' + ${opera.title}" />
-    </div>
-    <div>
-    	<p th:text="'year: ' + ${opera.year}" />
-    </div>
-    <div>
-    	<p th:text="'author: ' + ${opera.author.firstName + ' ' + opera.author.firstName}" />
-    </div>
-    <div>
-    	<p th:text="'technique: ' + ${opera.technique.name}" />
-    </div>
-    <div>
-    	<p th:text="'dimension: ' + ${opera.dimension.x + ' ' + opera.dimension.y}" />
+	<div class="panel panel-primary custom">
+      <div class="panel-heading" th:text="${opera.title}"></div>
+      <div class="panel-body" th:text="'year: ' + ${opera.year}"></div>
+      <div class="panel-body" th:text="'author: ' + ${opera.author.firstName + ' ' + opera.author.firstName}"></div>
+      <div class="panel-body" th:text="'technique: ' + ${opera.technique.name}"></div>
+      <div class="panel-body" th:text="'dimension: ' + ${opera.dimension.x + 'x' + opera.dimension.y}"></div>
     </div>
 </body>
 </html>
