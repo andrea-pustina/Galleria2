@@ -42,6 +42,8 @@ public class AuthorController {
     public String checkCustomerInfo(@Valid @ModelAttribute Author author, BindingResult bindingResult, Model model) {
     	
         if (bindingResult.hasErrors()) {
+        	List<Nation> nations = (List<Nation>) nationService.findAll();
+        	model.addAttribute("nations", nations);
             return "formauthor";
         }
         else {
@@ -57,13 +59,6 @@ public class AuthorController {
     	model.addAttribute("authors", authors);
         return "authors";
     }
-    
-//    @GetMapping("/author/detail")
-//    public String showAuthorDetail( Model model) {
-//    	List<Opera> operas = (List<Opera>) operaService.findAll();
-//    	model.addAttribute("operas", operas);
-//        return "authordetail";
-//    }
     
     @GetMapping("/author/{authorId}")
     public String showAuthorsDetails(Model model, @PathVariable("authorId") Long authorId ) {

@@ -43,13 +43,14 @@ public class OperaController {
     public String checkCustomerInfo(@Valid @ModelAttribute Opera opera, BindingResult bindingResult, Model model) {
     	
         if (bindingResult.hasErrors()) {
+        	List<Author> authors = (List<Author>) authorService.findAll();
+        	List<Technique> techniques = (List<Technique>) techniqueService.findAll();
+        	model.addAttribute("techniques", techniques);
+        	model.addAttribute("authors", authors);
             return "formopera";
         }
         else {
-        	//model.addAttribute(nation);
-        	//dimensionService.add(opera.getDimension());
-            operaService.add(opera);
-            
+        	operaService.add(opera);
         }
         return "summaryopera";
     }

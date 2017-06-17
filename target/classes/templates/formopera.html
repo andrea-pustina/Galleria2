@@ -29,23 +29,22 @@
 				    		</div>		
 				    		<div class="form-group">
 								<label>Dimension y:</label> 
-								<input type="text" th:field="*{dimension.y}" placeholder="Y(cm)" />
+								<input type="text" th:field="*{dimension.y}" placeholder="Y(cm)"/>
 								<span th:if="${#fields.hasErrors('dimension.y')}">Error</span>
 				    		</div>		    		
 				    		<div class="form-group">
 								<label>Author:</label> 
-								<select id="author" class="form-control" >
-			                		<option value="" >select a author</option>
-			                		<option th:each="a : ${authors}" th:value="${a.id}"  th:text="${a.firstName + ' ' + a.lastName}"></option>
-			            		</select>
+								<select id="author" th:field="*{author}" class="form-control">
+									<option value="">select an author</option>
+									<option th:each="n : ${authors}" th:value="${n.id}" th:text="${n.firstName + ' ' + n.lastName}"></option>
+								</select>
 					    		<span th:if="${#fields.hasErrors('author')}">Error</span>
 				    		</div>
 				    		<div class="form-group">
 								<label>Technique:</label> 
-								<select id="technique"
-									th:field="*{technique}" class="form-control">
+								<select id="technique" th:field="*{technique}" class="form-control">
 									<option value="">select a technique</option>
-									<option th:each="t : ${techniques}" th:value="${t.id}" th:text="${t.name}"></option>
+									<option th:each="n : ${techniques}" th:value="${n.id}" th:text="${n.name}"></option>
 								</select>
 					    		<span th:if="${#fields.hasErrors('technique')}">Error</span>
 				    		</div>
@@ -69,7 +68,7 @@
 		<link rel='stylesheet' href='/css/managementforms.css' />
 	</head>
 <body>
-	<form action="#" th:action="@{/admin/opera/add}" th:object="${opera}"
+	<form action="#" th:action="@{/opera/add}" th:object="${opera}"
 		method="post">
 		<div>
 			<div>
