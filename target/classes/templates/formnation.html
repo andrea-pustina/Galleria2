@@ -4,20 +4,29 @@
 		<title>New Nation</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<link rel='stylesheet' href='/webjars/bootstrap/3.2.0/css/bootstrap.min.css' />
+		<link rel='stylesheet' href='/css/managementforms.css' />
 	</head>
 <body>
-	<form action="#" th:action="@{/nation/add}" th:object="${nation}"
-		method="post">
-		<div>
-			<div>
-				<span>Name: </span> <span><input type="text"
-					th:field="*{name}" /></span> <span th:if="${#fields.hasErrors('name')}">Error</span>
-			</div>
-			<div>
-				<span><button type="submit">Submit</button></span>
-			</div>
-		</div>
-	</form>
+
+	<div th:include="navbar :: navbar"></div>
+	<div class="centered">
+			<form action="#" th:action="@{/nation/add}" th:object="${nation}" method="post">
+				<fieldset>
+					<legend>Add Nation</legend>
+						<p>
+						<label>Name:</label> 
+						<input type="text" th:field="*{name}" />
+			    			
+			    			<span th:if="${#fields.hasErrors('name')}">Error</span>
+			    		</p>
+						<span><button type="submit">Submit</button></span>
+				</fieldset>
+			</form>
+	</div>	
+	
+
+	
+	
 	<script type="text/javascript" src="webjars/jquery/2.1.1/jquery.min.js"></script>
 	<script type="text/javascript" src="webjars/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </body>

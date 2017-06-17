@@ -4,13 +4,19 @@
     <title>Management</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel='stylesheet' href='/webjars/bootstrap/3.2.0/css/bootstrap.min.css' />
+	<link rel='stylesheet' href='/css/management.css' />
 </head>
 <body>
-	<p><a href="/logout"> logout </a></p>
-	<p><a href="/test/inizializzadatabase"> Initialize database </a></p>	
-	<p><a href="/admin/technique/add/"> Insert a new technique </a></p>
-    <p><a href="/admin/nation/add/"> Insert a new nation </a></p>
-    <p><a href="/admin/opera/add/"> Insert a new opera </a></p>
-    <p><a href="/admin/author/add/"> Insert a new author </a></p>
+	<div th:include="navbar :: navbar"></div>
+	<div class="centered">
+		<fieldset>
+			<legend>Management</legend>
+				<p> <input type="button" class="btn btn-default"  onclick="location.href='/admin/opera/add/'" value="Add Opera" /> </p>
+				<p> <input type="button" class="btn btn-default"  onclick="location.href='/admin/author/add/'" value="Add Author" /> </p>
+				<p> <input type="button" class="btn btn-default"  onclick="location.href='/admin/nation/add/'" value="Add Nation" /> </p>
+				<p> <input type="button" class="btn btn-default"  onclick="location.href='/admin/technique/add/'" value="Add Technique" /> </p>
+				<p> <input type="button" class="btn btn-default"  onclick="location.href='/test/inizializzadatabase'" value="Initialize Database" /> </p>
+		</fieldset>
+	</div>	
 </body>
 </html>
