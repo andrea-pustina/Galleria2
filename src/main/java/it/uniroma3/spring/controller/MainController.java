@@ -36,10 +36,5 @@ public class MainController {
       model.addAttribute("loginError", true);
       return "login";
     }
-    
-//    @GetMapping("/logout")
-//    public String logout() {
-//        return "home";
-//    }
 
 }
