@@ -8,16 +8,12 @@ import org.springframework.transaction.annotation.Transactional;
 
 import it.uniroma3.spring.model.Author;
 import it.uniroma3.spring.model.Opera;
-import it.uniroma3.spring.repository.AuthorRepository;
 import it.uniroma3.spring.repository.OperaRepository;
 
 @Service
 public class OperaService {
 	@Autowired
     private OperaRepository operaRepository; 
-	
-	@Autowired
-    private AuthorRepository authorRepository; 
 
     public Iterable<Opera> findAll() {
         return this.operaRepository.findAll();
@@ -32,13 +28,13 @@ public class OperaService {
 		return this.operaRepository.findOne(id);
 	}
 	
-//	public List<Opera> findbyAuthorId(Long authorId) {
-//		Author author = this.authorRepository.findOne(authorId);
-//		return this.operaRepository.findByAuthor(author);
-//	}
-	
 	public List<Opera> findbyAuthor(Author author) {
 		return this.operaRepository.findByAuthor(author);
+	}
+
+	@Transactional
+	public void deleteById(Long operaId) {
+		operaRepository.delete(operaId);		
 	}
 	
 }

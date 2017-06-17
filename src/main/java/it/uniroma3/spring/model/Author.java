@@ -7,6 +7,7 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.CascadeType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
@@ -43,7 +44,7 @@ public class Author {
 	@ManyToOne
 	private Nation nation;
 	
-	@OneToMany(mappedBy="author")
+	@OneToMany(mappedBy="author", cascade=CascadeType.REMOVE)
 	private List<Opera> operas;
 	
 

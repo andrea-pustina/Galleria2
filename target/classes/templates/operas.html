@@ -24,6 +24,8 @@
         <td th:text="${o.author.lastName}"></td>
         <td th:text="${o.technique.name}"></td>
         <td th:text="${o.dimension.x + ' x ' + o.dimension.y}"></td>
+        <td sec:authorize="isAuthenticated()"><a th:href="@{'/admin/opera/update/' + ${o.id}}">Modify</a></td>
+      	<td sec:authorize="isAuthenticated()"><a th:href="@{'/admin/opera/delete/' + ${o.id}}">Delete</a></td>
       </tr>
     </table>
 </body>

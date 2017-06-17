@@ -26,7 +26,7 @@ public class Opera {
 	private int year;
 
 	@NotNull
-	@OneToOne(cascade={CascadeType.PERSIST, CascadeType.REMOVE})
+	@OneToOne(cascade=CascadeType.ALL)
 	private Dimension dimension;
 
 	@NotNull
