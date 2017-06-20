@@ -23,7 +23,9 @@ public class Technique {
 	@OneToMany(mappedBy="technique")
 	private List<Opera> operas;
 
-	protected Technique() {}
+	protected Technique() {
+		
+	}
 
 	public Technique(String name) {
 		this.name = name;
@@ -52,7 +54,6 @@ public class Technique {
 	public void setOperas(List<Opera> operas) {
 		this.operas = operas;
 	}
-	
 	
 }
 

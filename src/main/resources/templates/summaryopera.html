@@ -12,7 +12,7 @@
 	<div class="panel panel-primary custom">
       <div class="panel-heading" th:text="${opera.title}"></div>
       <div class="panel-body" th:text="'year: ' + ${opera.year}"></div>
-      <div class="panel-body" th:text="'author: ' + ${opera.author.firstName + ' ' + opera.author.firstName}"></div>
+      <div class="panel-body" th:text="'author: ' + ${opera.author.firstName + ' ' + opera.author.lastName}"></div>
       <div class="panel-body" th:text="'technique: ' + ${opera.technique.name}"></div>
       <div class="panel-body" th:text="'dimension: ' + ${opera.dimension.x + 'x' + opera.dimension.y}"></div>
     </div>

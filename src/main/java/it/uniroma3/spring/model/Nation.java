@@ -56,6 +56,4 @@ public class Nation {
 	public void setAuthor(List<Author> author) {
 		this.author = author;
 	}
-	
-	
 }

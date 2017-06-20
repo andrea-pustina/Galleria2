@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Implementation-Title: demo
+Implementation-Title: Gallery
 Implementation-Version: 0.0.1-SNAPSHOT
 Built-By: andrea
 Implementation-Vendor-Id: it.uniroma3

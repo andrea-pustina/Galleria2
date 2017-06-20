@@ -21,19 +21,17 @@ public class TechniqueController  {
     private TechniqueService techniqueservice; 
 
     @GetMapping("/admin/technique/add")
-    public String showForm(Technique technique) {
+    public String showFormTechnique(Technique technique) {
         return "formtechnique";
     }
 
     @PostMapping("/admin/technique/add")
-    public String checkTechniqueInfo(@Valid @ModelAttribute Technique technique, 
-    									BindingResult bindingResult, Model model) {
+    public String checkTechniqueInfo(@Valid @ModelAttribute Technique technique, BindingResult bindingResult, Model model) {
     	
         if (bindingResult.hasErrors()) {
             return "formtechnique";
         }
         else {
-        	//model.addAttribute(technique);
             techniqueservice.add(technique); 
         }
         return "summarytechnique";

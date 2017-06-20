@@ -62,6 +62,4 @@ public class Dimension {
 		this.opera = opera;
 	}
 
-	
-	
 }

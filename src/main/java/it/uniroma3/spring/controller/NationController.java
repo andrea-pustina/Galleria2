@@ -30,7 +30,6 @@ public class NationController {
             return "formnation";
         }
         else {
-        	//smodel.addAttribute(nation);
             nationService.add(nation); 
         }
         return "summarynation";

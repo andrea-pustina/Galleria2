@@ -7,9 +7,6 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
-//import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-//
-//import javax.sql.DataSource;
 
 @Configuration
 @EnableWebSecurity
@@ -27,14 +24,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
    				 		 "/author/*",
         				 "/css/**",
         				 "/img/**",
-        				 //"/js/**",
-	                     //"/**/favicon.ico",
 	                     "/webjars/**").permitAll()
             .anyRequest().authenticated()
             .and()
         .formLogin()
             .loginPage("/login")
-            .defaultSuccessUrl("/management")
             .permitAll()
             .and()
         .logout()

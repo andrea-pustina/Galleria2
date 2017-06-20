@@ -45,8 +45,10 @@ public class TestController {
 		nationService.add(n2);
 		
 		
-		Author a1 = new Author("andrea", "pustina", new Date(1231261), new Date(424676), n1 );
-		Author a2 = new Author("andrea", "gaggiotti", new Date(12341261), new Date(4234676), n2 );
+		@SuppressWarnings("deprecation")
+		Author a1 = new Author("andrea", "pustina", new Date(1990,11,15), new Date(1990,11,16), n1 );
+		@SuppressWarnings("deprecation")
+		Author a2 = new Author("andrea", "gaggiotti", new Date(1991,11,15), new Date(1991,11,16), n2 );
 		authorService.add(a1);
 		authorService.add(a2);
 		
