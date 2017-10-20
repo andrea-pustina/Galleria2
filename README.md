@@ -1,7 +1,3 @@
-Progetto finale sistemi informativi web
-
-
-
 Caso d'uso UC1: Aggiungi Opera
 ----------------------------------------------------------------------
 Attore primario: Amministratore
@@ -11,11 +7,11 @@ Post-condizioni: l'opera viene registrata
 Scenario principale di successo:
 	1.L'amministratore si autentica.
 	2.L'amministratore inizia la creazione di una nuova opera.
-	3.L'amministratore inserisce titolo, anno, dimensioni, sceglie autore e tecnica.  
+	3.L'amministratore inserisce titolo, anno, dimensioni, sceglie autore e tecnica. 
 	4.L'amministratore indica che ha terminato e il sistema mostra il riepilogo delle informazioni.
 	5.L'amministratore conferma l'inserimento e il sistema registra l'opera
-
-
+	
+	
 Caso d'uso UC2: Modifica Opera
 ----------------------------------------------------------------------
 Attore primario: Amministratore
