@@ -1,6 +1,6 @@
 Caso d'uso UC1: Aggiungi Opera
 ----------------------------------------------------------------------
-Attore primario: Amministratore\n
+Attore primario: Amministratore
 Pre-condizioni:  autore e tecnica dell'opera già registrati nel sistema
 Post-condizioni: l'opera viene registrata
 
