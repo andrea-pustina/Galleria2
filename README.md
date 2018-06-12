@@ -1,15 +1,15 @@
-Caso d'uso UC1: Aggiungi Opera
-----------------------------------------------------------------------
-Attore primario: Amministratore
-Pre-condizioni:  autore e tecnica dell'opera già registrati nel sistema
-Post-condizioni: l'opera viene registrata
+# Galleria Simple Website
+## Caso d'uso UC1: Aggiungi Opera
+* Attore primario: Amministratore
+* Pre-condizioni:  autore e tecnica dell'opera già registrati nel sistema
+* Post-condizioni: l'opera viene registrata
 
-Scenario principale di successo:
-	1.L'amministratore si autentica.
-	2.L'amministratore inizia la creazione di una nuova opera.
-	3.L'amministratore inserisce titolo, anno, dimensioni, sceglie autore e tecnica. 
-	4.L'amministratore indica che ha terminato e il sistema mostra il riepilogo delle informazioni.
-	5.L'amministratore conferma l'inserimento e il sistema registra l'opera
+* Scenario principale di successo:
+  1. L'amministratore si autentica.
+  2. L'amministratore inizia la creazione di una nuova opera.
+  3. L'amministratore inserisce titolo, anno, dimensioni, sceglie autore e tecnica. 
+  4. L'amministratore indica che ha terminato e il sistema mostra il riepilogo delle informazioni.
+  5. L'amministratore conferma l'inserimento e il sistema registra l'opera
 	
 	
 Caso d'uso UC2: Modifica Opera
