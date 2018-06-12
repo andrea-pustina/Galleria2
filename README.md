@@ -1,4 +1,4 @@
-# Galleria Simple Website
+# Spring WebSite Galleria
 ## Caso d'uso UC1: Aggiungi Opera
 * Attore primario: Amministratore
 * Pre-condizioni:  autore e tecnica dell'opera già registrati nel sistema
